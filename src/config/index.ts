@@ -1,6 +1,6 @@
 import envFlow from "dotenv-flow";
 import { cleanEnv, num, port, str, url } from "envalid";
-import { version } from "../../package.json";
+import { version, name } from "../../package.json";
 
 envFlow.config({ silent: true });
 
@@ -8,6 +8,7 @@ const strNotRequiredInTest = () =>
   process.env.NODE_ENV === "test" ? str({ devDefault: "" }) : str();
 
 const env = cleanEnv(process.env, {
+  NAME: str(),
   VERSION: str({ default: version }),
   NODE_ENV: str(),
   PORT: port({ devDefault: 3000 }),
@@ -23,6 +24,7 @@ const env = cleanEnv(process.env, {
 export const {
   VERSION,
   NODE_ENV,
+  NAME,
   PORT,
   ANVIL_CHAIN_ID,
   ANVIL_FORK_URL,
