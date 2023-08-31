@@ -14,7 +14,10 @@
     "wagmi": "wagmi generate"
   },
   "dependencies": {
+    "@types/dotenv-flow": "^3.3.0",
     "@wagmi/cli": "^1.0.0",
+    "dotenv-flow": "^3.3.0",
+    "envalid": "^7.3.1",
     "next": "^13.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
