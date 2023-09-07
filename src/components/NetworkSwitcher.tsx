@@ -1,6 +1,5 @@
 'use client'
 
-import { BaseError } from 'viem'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 
 export function NetworkSwitcher() {
@@ -14,9 +13,10 @@ export function NetworkSwitcher() {
         Connected to {chain?.name ?? chain?.id}
         {chain?.unsupported && ' (unsupported)'}
       </div>
-
+      <br />
       {switchNetwork && (
         <div>
+          Switch to:{' '}
           {chains.map((x) =>
             x.id === chain?.id ? null : (
               <button key={x.id} onClick={() => switchNetwork(x.id)}>
@@ -28,7 +28,7 @@ export function NetworkSwitcher() {
         </div>
       )}
 
-      <div>{error && (error as BaseError).shortMessage}</div>
+      <div>{error?.message}</div>
     </div>
   )
 }

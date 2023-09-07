@@ -1,9 +1,8 @@
 'use client'
 
-import type { ReactNode } from 'react'
 import { useAccount } from 'wagmi'
 
-export function Connected({ children }: { children: ReactNode }) {
+export function Connected({ children }: { children: React.ReactNode }) {
   const { isConnected } = useAccount()
 
   if (!isConnected) return null
