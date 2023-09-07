@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) + [Foundry](https://book.getfoundry.sh/) + [wagmi](https://wagmi.sh) project bootstrapped with [`create-wagmi`](https://github.com/wagmi-dev/wagmi/tree/main/packages/create-wagmi)
+# What's included
+
+This template repo includes:
+
+- [Typescript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org)
+- [Foundry](https://book.getfoundry.sh/)
+- [wagmi](https://wagmi.sh)
+- [RainbowKit](https://www.rainbowkit.com/)
+- [Vercel](https://vercel.com/orca-protocol)(depoy button)
 
 # Getting Started
 
