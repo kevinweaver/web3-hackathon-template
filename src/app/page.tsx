@@ -17,6 +17,8 @@ import { WatchPendingTransactions } from "../components/WatchPendingTransactions
 import { WriteContract } from "../components/WriteContract";
 import { WriteContractPrepared } from "../components/WriteContractPrepared";
 
+import "../styles/globals.css";
+
 export default function Page() {
   return (
     <>
