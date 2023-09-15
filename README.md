@@ -1,4 +1,4 @@
-# What's included
+# Web3 Hackathon Template
 
 This template repo includes:
 
