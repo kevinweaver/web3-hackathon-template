@@ -5,9 +5,9 @@ This template repo includes:
 - [Typescript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org)
 - [Foundry](https://book.getfoundry.sh/)
-- [wagmi](https://wagmi.sh)
+- [wagmi/viem](https://wagmi.sh)
 - [RainbowKit](https://www.rainbowkit.com/)
-- [Vercel](https://vercel.com/orca-protocol)(depoy button)
+- [Vercel](#hosting)
 
 # Getting Started
 
