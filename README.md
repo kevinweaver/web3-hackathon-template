@@ -7,6 +7,7 @@ This template repo includes:
 - [Foundry](https://book.getfoundry.sh/)
 - [wagmi/viem](https://wagmi.sh)
 - [RainbowKit](https://www.rainbowkit.com/)
+- [tailwind](https://tailwindcss.com/)
 - [Vercel](#hosting)
 
 # Getting Started
