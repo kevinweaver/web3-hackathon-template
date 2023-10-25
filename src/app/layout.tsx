@@ -1,8 +1,12 @@
 import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./providers";
 
+// These styles apply to every route in the application
+import "../styles/globals.css";
+
 export const metadata = {
-  title: "web3 hackathon template",
+  title: "NFT Mint",
+  description: "Example of a mintable NFT monorepo.",
 };
 
 export default function RootLayout({
