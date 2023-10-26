@@ -45,7 +45,7 @@ Copy the environment variable example file:
 cp .env.example .env
 ```
 
-Open `.env.local` and set the following values:
+Open `.env` and set the following values:
 
 - `ANVIL_FORK_URL`: The RPC that your local chain will initially fork from. We suggest setting up an Alchemy Sepolia node for this.
 - `ETHERSCAN_API_KEY`: Your Etherscan API Key for deployed contract verification.
