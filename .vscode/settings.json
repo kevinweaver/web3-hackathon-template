@@ -1,3 +1,9 @@
 {
-  "solidity.defaultCompiler": "localNodeModule"
+  "solidity.compileUsingRemoteVersion": "v0.8.20",
+  "solidity.packageDefaultDependenciesContractsDirectory": "src",
+  "solidity.packageDefaultDependenciesDirectory": "lib",
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+  "solidity.formatter": "forge"
 }
