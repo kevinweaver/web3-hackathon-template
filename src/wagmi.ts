@@ -11,7 +11,8 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   [publicProvider()]
 );
 
-const projectId = "d96a7e491e6a7f99ad93e400a5462afa";
+// Create project at https://cloud.walletconnect.com/app
+const projectId = "WALLET_CONNECT_PROJECT_ID";
 
 const { connectors } = getDefaultWallets({
   appName: "My wagmi + RainbowKit App",

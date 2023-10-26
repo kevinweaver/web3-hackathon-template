@@ -12,84 +12,59 @@ This template repo includes:
 
 # Getting Started
 
-Run `npm run dev` in your terminal, and then open [localhost:3000](http://localhost:3000) in your browser.
+## 1. Install Foundry
 
-Once the webpage has loaded, changes made to files inside the `src/` directory (e.g. `src/pages/index.tsx`) will automatically update the webpage.
-
-# Generating ABIs & React Hooks
-
-This project comes with `@wagmi/cli` built-in, which means you can generate wagmi-compatible (type safe) ABIs & React Hooks straight from the command line.
-
-To generate ABIs & Hooks, follow the steps below.
-
-## Install Foundry
-
-First, you will need to install [Foundry](https://book.getfoundry.sh/getting-started/installation) in order to build your smart contracts. This can be done by running the following command:
+Install [Foundry](https://book.getfoundry.sh/getting-started/installation) to build contracts:
 
 ```
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
-## Generate code
+<!-- ## Install submodules -->
 
-To generate ABIs & React Hooks from your Foundry project (in `./contracts`), you can run:
+## 2. Install Dependencies
 
-```
-npm run wagmi
-```
-
-This will use the wagmi config (`wagmi.config.ts`) to generate a `src/generated.ts` file which will include your ABIs & Hooks that you can start using in your project.
-
-[Here is an example](./src/components/Counter.tsx) of where Hooks from the generated file is being used.
-
-# Deploying Contracts
-
-To deploy your contracts to a network, you can use Foundry's [Forge](https://book.getfoundry.sh/forge/) – a command-line tool to tests, build, and deploy your smart contracts.
-
-You can read a more in-depth guide on using Forge to deploy a smart contract [here](https://book.getfoundry.sh/forge/deploying), but we have included a simple script in the `package.json` to get you started.
-
-Below are the steps to deploying a smart contract to Ethereum Mainnet using Forge:
-
-## Install Foundry
-
-Make sure you have Foundry installed & set up.
-
-[See the above instructions](#install-foundry).
-
-## Set up environment
-
-You will first need to set up your `.env` to tell Forge where to deploy your contract.
-
-Go ahead and open up your `.env` file, and enter the following env vars:
-
-- `ETHERSCAN_API_KEY`: Your Etherscan API Key.
-- `FORGE_RPC_URL`: The RPC URL of the network to deploy to.
-- `FORGE_PRIVATE_KEY`: The private key of the wallet you want to deploy from.
-
-## Deploy contract
-
-You can now deploy your contract!
+Ensure you're using node version >=18.17.0. We suggest using [nvm](https://github.com/nvm-sh/nvm):
 
 ```
-npm run deploy
+nvm install 18.17.0
+nvm use 18.17.0
 ```
 
-# Developing with Anvil (Mainnet Fork)
-
-Let's combine the above sections and use Anvil alongside our development environment to use our contracts (`./contracts`) against an Ethereum Mainnet fork.
-
-## Install Foundry
-
-Make sure you have Foundry installed & set up.
-
-[See the above instructions](#install-foundry).
-
-## Start dev server
-
-Run the command:
+Install node dependencies:
 
 ```
-npm run dev:foundry
+yarn install
+```
+
+## 3. Set Env Vars
+
+Copy the environment variable example file:
+
+```
+cp .env.example .env
+```
+
+Open `.env.local` and set the following values:
+
+- `ANVIL_FORK_URL`: The RPC that your local chain will initially fork from. We suggest setting up an Alchemy Sepolia node for this.
+- `ETHERSCAN_API_KEY`: Your Etherscan API Key for deployed contract verification.
+
+Finally, open `wagmi.ts` and set a Wallet Connect [Project ID](https://cloud.walletconnect.com/app)
+to ensure the Connect Wallet button works.
+
+```
+const projectId = WALLET_CONNECT_PROJECT_ID;
+```
+
+# Development
+
+## Running Locally
+
+Open a terminal and run:
+
+```
+yarn dev:foundry
 ```
 
 This will:
@@ -98,12 +73,38 @@ This will:
 - Start the `@wagmi/cli` in [**watch mode**](https://wagmi.sh/cli/commands/generate#options) to listen to changes in our contracts, and instantly generate code,
 - Start an Anvil instance (Mainnet Fork) on an RPC URL.
 
-## Deploy our contract to Anvil
+Open [localhost:3000](http://localhost:3000) in your browser.
+Once the webpage has loaded, changes made to files inside the `src/` directory (e.g. `src/pages/index.tsx`) will automatically update the webpage.
 
-Now that we have an Anvil instance up and running, let's deploy our smart contract to the Anvil network:
+## Generating hooks
+
+This project comes with `@wagmi/cli` built-in, which means you can generate wagmi-compatible (type safe) ABIs & React Hooks straight from the command line.
+To generate ABIs & React Hooks from your Foundry project (in `./contracts`), you can run:
 
 ```
-pnpm run deploy:anvil
+yarn wagmi
+```
+
+This will use the wagmi config (`wagmi.config.ts`) to generate a `src/generated.ts` file which will include your ABIs & Hooks that you can start using in your project.
+
+[Here is an example](./src/components/Counter.tsx) of where Hooks from the generated file is being used.
+
+# Deployment
+
+## Build
+
+Generate [wagmi] handles and [next build](https://nextjs.org/docs/pages/api-reference/next-cli#build)
+
+```
+yarn build
+```
+
+## Deploy Contracts
+
+Once Anvil is [running](#running-locally), deploy smart contract to the Anvil network:
+
+```
+yarn deploy:anvil
 ```
 
 ## Start developing
@@ -128,3 +129,4 @@ To learn more about [Next.js](https://nextjs.org), [Foundry](https://book.getfou
 - [@wagmi/cli Documentation](https://wagmi.sh/cli) – learn more about the wagmi CLI.
 - [Next.js Documentation](https://nextjs.org/docs) learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Tailwind Documentation](https://tailwindcss.com/docs/installation) - learn more about Tailwind.
