@@ -10,6 +10,50 @@ This template repo includes:
 - [tailwind](https://tailwindcss.com/)
 - [Vercel](#hosting)
 
+# Setup
+
+## 1. Install Foundry
+
+Install [Foundry](https://book.getfoundry.sh/getting-started/installation) to build contracts:
+
+```
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+<!-- ## Install submodules -->
+
+## 2. Install Dependencies
+
+Install node dependencies:
+
+```
+yarn
+```
+
+## 3. Set Env Vars
+
+Copy the environment variable example file:
+
+```
+cp .env.example .env.local
+```
+
+And set the following values:
+
+```
+
+```
+
+# Local Development
+
+## Build
+
+Generate [wagmi] handles and [next build](https://nextjs.org/docs/pages/api-reference/next-cli#build)
+
+```
+yarn build
+```
+
 # Getting Started
 
 Run `npm run dev` in your terminal, and then open [localhost:3000](http://localhost:3000) in your browser.
@@ -21,14 +65,6 @@ Once the webpage has loaded, changes made to files inside the `src/` directory (
 This project comes with `@wagmi/cli` built-in, which means you can generate wagmi-compatible (type safe) ABIs & React Hooks straight from the command line.
 
 To generate ABIs & Hooks, follow the steps below.
-
-## Install Foundry
-
-First, you will need to install [Foundry](https://book.getfoundry.sh/getting-started/installation) in order to build your smart contracts. This can be done by running the following command:
-
-```
-curl -L https://foundry.paradigm.xyz | bash
-```
 
 ## Generate code
 
@@ -49,12 +85,6 @@ To deploy your contracts to a network, you can use Foundry's [Forge](https://boo
 You can read a more in-depth guide on using Forge to deploy a smart contract [here](https://book.getfoundry.sh/forge/deploying), but we have included a simple script in the `package.json` to get you started.
 
 Below are the steps to deploying a smart contract to Ethereum Mainnet using Forge:
-
-## Install Foundry
-
-Make sure you have Foundry installed & set up.
-
-[See the above instructions](#install-foundry).
 
 ## Set up environment
 
