@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-b from-[#eee] to-white min-h-screen flex flex-col text-primary font-medium lg:overflow-hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body main {
+  @apply min-h-page;
+}
+
+@layer components {
+  .btn {
+    @apply transition ease-in-out duration-300 rounded-md px-3.5 leading-none flex items-center justify-center whitespace-nowrap text-accent rounded-lg text-base font-bold;
+    font-feature-settings: "clig" off, "liga" off;
+  }
+
+  .btn:not(:disabled):not(.btn--secondary):not(.btn--outline) {
+    @apply bg-accent text-white;
+  }
+
+  .btn--secondary {
+    @apply bg-white text-black tracking-tight;
+  }
+
+  .btn:hover,
+  .btn:focus,
+  .btn:active {
+  }
+
+  .btn--xs {
+    @apply text-[.75rem] h-[24px] leading-[24px];
+  }
+
+  .btn--sm {
+    @apply text-[.875rem] h-[32px] leading-[32px];
+  }
+
+  .btn--md {
+    @apply text-[.875rem] h-[36px] leading-[36px];
+  }
+
+  .btn--lg {
+    @apply h-[48px] leading-[48px];
+  }
+
+  .btn--xl {
+    @apply h-[64px] text-[32px] font-black leading-[64px] tracking-wide;
+  }
+
+  .btn--outline {
+    @apply bg-transparent text-accent outline -outline-offset-1 outline-2 outline-accent tracking-wide;
+  }
+
+  /* .btn--outline:hover,
+  .btn--outline:focus,
+  .btn--outline:active {
+  } */
+
+  .gradient-text {
+    background: linear-gradient(180deg, #484848 20.59%, #979797 82.35%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
